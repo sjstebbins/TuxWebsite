@@ -1,0 +1,63 @@
+{
+  "name": "Tux-Website",
+  "version": "0.0.0",
+  "description": "Documentation Site for Tuxedo.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify -d client/app.js -o client/bundle.js -v",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TuxedoJS/TuxWebsite"
+  },
+  "keywords": [
+    "TuxedoJs",
+    "tuxedoJS",
+    "Tuxedo.js",
+    "tuxedo.js",
+    "Tux",
+    "tux",
+    "Tuxedo",
+    "tuxedo",
+    "TuxWebsite",
+    "Documentation",
+    "Components",
+    "Framework",
+    "Library"
+  ],
+  "author": "drabinowitz, cheerazar, plauer, sjstebbins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TuxedoJS/TuxWebsite/issues"
+  },
+  "homepage": "https://github.com/TuxedoJS/TuxWebsite",
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ],
+      "envify"
+    ]
+  },
+  "devDependencies": {
+    "browserify": "^7.0.3",
+    "envify": "^3.2.0",
+    "reactify": "^0.17.1",
+    "watchify": "^2.2.1"
+  },
+  "dependencies": {
+    "events": "^1.0.2",
+    "flux": "^2.0.1",
+    "object-assign": "^2.0.0",
+    "q": "^1.1.2",
+    "react": "^0.12.2",
+    "react-bootstrap": "^0.13.0",
+    "react-remarkable": "^1.1.0",
+    "react-router": "^0.11.6",
+    "request": "^2.51.0"
+  }
+}
