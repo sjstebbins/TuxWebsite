@@ -9,31 +9,29 @@ var DefaultRoute = Router.DefaultRoute;
 var Link = Router.Link;
 var RouteHandler = Router.RouteHandler;
 var NotFound = require('./app/components/NotFound.jsx');
-var ApiView = require('./app/components/api/ApiView.jsx');
-var SectionView = require('./app/components/api/sections/SectionView.jsx');
-var DocumentView = require('./app/components/api/sections/documents/DocumentView.jsx');
+var DocsView = require('./app/components/docs/DocsView.jsx');
+var SectionView = require('./app/components/docs/sections/SectionView.jsx');
+var DocumentView = require('./app/components/docs/sections/documents/DocumentView.jsx');
 var ContributeView = require('./app/components/ContributeView.jsx');
 var DefaultWelcome = require('./app/components/DefaultWelcome.jsx');
+var TheTeamView = require('./app/components/TheTeamView.jsx');
+var SectionHandler = require('./app/components/docs/sections/SectionHandler.jsx');
 
 var routes = (
-
-  <Route name="app" path="/" handler={NavView}>
-
+  <Route name="home" path="/" handler={NavView}>
     <DefaultRoute handler={DefaultWelcome} />
-
-    <NotFoundRoute handler={NotFound} />
-
-    <Route name="api" path="/api" handler={ApiView}>
-      <Route name="api.section" path="/api/:section" handler={SectionView}>
-        <Route name="api.section.document" path="/api/:section/:document" handler={DocumentView} />
+    <Route name="docs" path="/docs" handler={DocsView}>
+      <Route name="docs.section" path="/docs/:section" handler={SectionHandler}>
+        <DefaultRoute handler={SectionView} />
+        <Route name="docs.section.document" path="/docs/:section/:document" handler={DocumentView} />
       </Route>
     </Route>
-
+    <Route name="the-team" path="/the-team" handler={TheTeamView} />
     <Route name="contribute" path="/contribute" handler={ContributeView} />
+    <NotFoundRoute handler={NotFound} />
   </Route>
 );
 
-Router.run(routes, function (Handler) {
+Router.run(routes, Router.HistoryLocation, function (Handler) {
   React.render(<Handler />, document.getElementById("main"));
 });
-

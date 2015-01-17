@@ -1,0 +1,8 @@
+.welcome{
+  width: 100%;
+  height: 1000px;
+  background-image: url('../assets/witewall_3.png');
+}
+.intro{
+  margin-left: 4em;
+}

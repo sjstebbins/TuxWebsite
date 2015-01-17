@@ -15,10 +15,16 @@ var NavView = React.createClass({
   render: function () {
     return (
       <div>
-         <Navbar>
+         <Navbar className="nav-bar">
           <Nav>
-            <NavItem href="#"><img className='logo' src="/client/assets/Tux-logo.png"></img></NavItem>
-            <NavItem href="#">Home</NavItem>
+            <NavItem className="link">
+              <Link to="home">
+                <img className='logo' src="/client/assets/Tux-logo.png"></img>
+              </Link>
+            </NavItem>
+            <NavItem className="link">
+              <Link to="home">Home</Link>
+            </NavItem>
             <DropdownButton title="Learn">
               <MenuItem>Tutorial</MenuItem>
               <MenuItem>FAQ</MenuItem>
@@ -26,12 +32,13 @@ var NavView = React.createClass({
               <MenuItem divider />
               <MenuItem>ChatApp</MenuItem>
             </DropdownButton>
-            <DropdownButton title="Develop">
-              <MenuItem>
-                <Link to="api">API Documentation</Link>
-              </MenuItem>
-            </DropdownButton>
-            <NavItem href="#" className="contribute">
+            <NavItem className="link">
+              <Link to="docs">Documentation</Link>
+            </NavItem>
+            <NavItem className="link">
+              <Link to="the-team">The Team</Link>
+            </NavItem>
+            <NavItem className="link">
               <Link to="contribute">Contribute</Link>
             </NavItem>
             <NavItem className="icons" href="https://github.com/TuxedoJS" target="_blank">

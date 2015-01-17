@@ -8,6 +8,12 @@ var DocumentActions = {
     AppDispatcher.handleViewAction({
       actionType: DocumentConstants.DOCUMENT_GET
     });
+  },
+  getDoc: function (body) {
+    AppDispatcher.handleViewAction({
+      actionType: DocumentConstants.DOCUMENT_GET_DOC,
+      body: body
+    });
   }
 };
 
