@@ -55,6 +55,16 @@
         event.preventDefault();
       });
 
+      // scroller
+      if (scroll_top > 200) {
+        $(".scroller").show();
+        $(".scroller").fadeIn();
+      } else {
+        $(".scroller").fadeOut();
+        $(".scroller").hide();
+      }
+      //links scroll
+      // $('a').click(function())
     });
   });
   </script>

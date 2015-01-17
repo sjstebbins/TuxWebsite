@@ -54,6 +54,7 @@ var DocsView = React.createClass({
             <RouteHandler />
           </Col>
         </Row>
+        <div><i href="#" className="fa fa-angle-double-up scroller"></i></div>
       </Grid>
       </div>
     );

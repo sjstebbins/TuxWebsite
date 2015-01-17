@@ -11,17 +11,30 @@ var DefaultWelcome = React.createClass({
       <div className="welcome">
         <div className="header"></div>
         <Grid>
-          <Row className="show-grid">
-            <Col className="intro" xs={8} xsoffset={2}>
+          <Row className="show-grid section1">
+            <Col className="intro" xs={12} xsoffset={2}>
               <img className="tuxedo" src="/client/assets/tuxedojs.png" />
               <h3> React with more bowties </h3>
-              <Button bsSize="large">
-                <i href="https://github.com/TuxedoJS" className="fa fa-github-square"> View on Github</i>
+              <div className="item-container"><img className="bowtie" src="/client/assets/Tux-icon.png" /></div>
+              <div className="item-container"><img className="dot1 dots" src="/client/assets/dot.png" /></div>
+              <div className="item-container"><img className="dot2 dots" src="/client/assets/dot.png" /></div>
+              <Button bsSize="large" href="https://github.com/TuxedoJS/TuxedoJS">
+                <i className="fa fa-github-square"> View on Github</i>
               </Button>
               <Button bsSize="large">
                 <i className="fa fa-cloud-download"> Download</i>
               </Button>
             </Col>
+            <Row className="show-grid section2">
+              <Col className="whyTux" md={3} xsoffset={2}>
+                <h1>Why Tuxedo.js</h1>
+                <p>Because Tuxedo.js is awesome</p>
+              </Col>
+              <Col className="whyTux" md={3} xsoffset={2}>
+                <h1>Why Tuxedo.js</h1>
+                <p>Because Tuxedo.js is awesome</p>
+              </Col>
+            </Row>
           </Row>
         </Grid>
       </div>
