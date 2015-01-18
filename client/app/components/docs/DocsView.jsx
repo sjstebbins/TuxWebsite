@@ -27,7 +27,9 @@ var DocsView = React.createClass({
   componentDidMount: function () {
     DocumentStore.addChangeListener(this.listenerCallback);
     DocumentActions.get();
-    this.setState({spinner: true});
+    if (!this.state.docs) {
+      this.setState({spinner: true});
+    }
   },
   componentWillUnmount: function () {
     DocumentStore.removeChangeListener(this.listenerCallback);
@@ -47,7 +49,7 @@ var DocsView = React.createClass({
     }
     var spinner;
     if (this.state.spinner){
-      spinner = <img src="/client/assets/bowtie.gif" />;
+      spinner = <img className="spinner1" src="/client/assets/bowtie.gif" />;
     }
     return (
       <div>
@@ -55,14 +57,16 @@ var DocsView = React.createClass({
       <Grid>
         <Row>
           <Col className='docs-menu' xs={3} md={2}>
-            {spinner}
             {docsMenu}
+            {spinner}
+          </Col>
+          <Col xs={3} md={3}>
           </Col>
           <Col xs={12} md={8} className="docs">
             <RouteHandler />
           </Col>
         </Row>
-        <div><i href="#" className="fa fa-angle-double-up scroller"></i></div>
+        <div><a href="#"><i className="fa fa-angle-double-up scroller"></i></a></div>
       </Grid>
       </div>
     );

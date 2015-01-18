@@ -16,7 +16,7 @@ var Section =  React.createClass({
     var section = this.props.section.section;
     return (
       <div>
-        <h3><Link to="docs.section" params={{section: section}}>{section}</Link></h3><br/>
+        <h3><Link to="docs.section" params={{section: section}}>{section}</Link></h3>
         {links}
       </div>
     )

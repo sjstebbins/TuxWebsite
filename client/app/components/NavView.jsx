@@ -15,48 +15,62 @@ var NavView = React.createClass({
   render: function () {
     $( document ).ready(function() {
       $(function() {
-        // grab the initial top offset of the navigation
-        var sticky_navigation_offset_top = 200;
 
         // our function that decides weather the navigation bar should have "fixed" css position or not.
         var sticky_navigation = function(){
-          var scroll_top = $(window).scrollTop(); // our current vertical position from the top
-
+          // grab the initial top offset of the navigation
+          var sticky_navigation_offset_top = 200;
+          var scroll_top = $(window).scrollTop();
           // if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
           if (scroll_top > sticky_navigation_offset_top) {
-            $('.nav-bar').css({ height: '6em'});
+            $('.nav-bar').css({ height: '4em'});
             $(".logo").slideUp();
-            $(".logo-icon").slideDown();
+            $(".icon").show();
+            $(".icon").slideDown();
+            $('.docs-menu').animate('margin-top','-2em');
           } else {
             $(".logo").slideDown();
             $('.nav-bar').css({ height: '8em'});
-            $(".logo-icon").slideDown();
+            $(".icon").slideDown();
+            $(".icon").hide();
+            $('.docs-menu').animate('margin-top','0em');
           };
         }
         // run our function on load
         sticky_navigation();
 
+        var scroller = function () {
+          var scroll_top = $(window).scrollTop();
+          // scroller
+          if (scroll_top > 200) {
+            $(".scroller").css('visibility', 'visible');
+            $(".scroller").fadeIn();
+          } else {
+            $(".scroller").fadeOut();
+          }
+        }
+
+        scroller();
         // and run it again every time you scroll
         $(window).scroll(function() {
-         sticky_navigation();
-        });
+          sticky_navigation();
+          scroller();
 
-        // NOT required:
-        // for this demo disable all links that point to "#"
-        $('a[href="#"]').click(function(event){
-          event.preventDefault();
         });
+        //smooth scroll links
+        // $('a[href^="#"]').on('click',function (e) {
+        //     e.preventDefault();
 
-        // scroller
-        if (scroll_top > 200) {
-          $(".scroller").show();
-          $(".scroller").fadeIn();
-        } else {
-          $(".scroller").fadeOut();
-          $(".scroller").hide();
-        }
-        //links scroll
-        // $('a').click(function())
+        //     var target = this.hash;
+        //     var $target = $(target);
+
+        //     $('html, body').stop().animate({
+        //         'scrollTop': $target.offset().top
+        //     }, 900, 'swing', function () {
+        //         window.location.hash = target;
+        //     });
+        // });
+
       });
     });
 
@@ -68,16 +82,20 @@ var NavView = React.createClass({
               <Link to="home">
                 <img className='logo' src="/client/assets/Tux-logo.png"></img>
               </Link>
+              <Link to="home">
+                <img className='icon' src="/client/assets/Tux-icon.png"></img>
+              </Link>
             </NavItem>
             <NavItem className="link">
               <Link to="home">Home</Link>
             </NavItem>
-            <DropdownButton title="Learn">
-              <MenuItem>Tutorial</MenuItem>
+            <DropdownButton className="learn" title="Learn">
+              <MenuItem>
+                <Link to="getting-started">Getting Started</Link>
+              </MenuItem>
               <MenuItem>FAQ</MenuItem>
-              <MenuItem>Examples</MenuItem>
               <MenuItem divider />
-              <MenuItem>ChatApp</MenuItem>
+              <MenuItem>Example ChatApp</MenuItem>
             </DropdownButton>
             <NavItem className="link">
               <Link to="docs">Documentation</Link>

@@ -6,16 +6,17 @@ var Router = require('react-router');
 var Route = Router.Route;
 var NotFoundRoute = Router.NotFoundRoute;
 var DefaultRoute = Router.DefaultRoute;
+var DefaultWelcome = require('./app/components/DefaultWelcome.jsx');
 var Link = Router.Link;
 var RouteHandler = Router.RouteHandler;
 var NotFound = require('./app/components/NotFound.jsx');
+var GettingStartedView = require('./app/components/GettingStartedView.jsx');
 var DocsView = require('./app/components/docs/DocsView.jsx');
 var SectionView = require('./app/components/docs/sections/SectionView.jsx');
-var DocumentView = require('./app/components/docs/sections/documents/DocumentView.jsx');
-var ContributeView = require('./app/components/ContributeView.jsx');
-var DefaultWelcome = require('./app/components/DefaultWelcome.jsx');
-var TheTeamView = require('./app/components/TheTeamView.jsx');
 var SectionHandler = require('./app/components/docs/sections/SectionHandler.jsx');
+var DocumentView = require('./app/components/docs/sections/documents/DocumentView.jsx');
+var TheTeamView = require('./app/components/TheTeamView.jsx');
+var ContributeView = require('./app/components/ContributeView.jsx');
 
 var routes = (
   <Route name="home" path="/" handler={NavView}>
@@ -26,6 +27,7 @@ var routes = (
         <Route name="docs.section.document" path="/docs/:section/:document" handler={DocumentView} />
       </Route>
     </Route>
+    <Route name="getting-started" path="/getting-started" handler={GettingStartedView} />
     <Route name="the-team" path="/the-team" handler={TheTeamView} />
     <Route name="contribute" path="/contribute" handler={ContributeView} />
     <NotFoundRoute handler={NotFound} />

@@ -7,7 +7,7 @@ var ReactBootstrap = require('react-bootstrap'),
     Row = ReactBootstrap.Row,
     Grid = ReactBootstrap.Grid;
 
-var ContributeView = React.createClass({
+var TheTeamView = React.createClass({
   render: function () {
     return (
       <div>
@@ -34,4 +34,4 @@ var ContributeView = React.createClass({
   }
 });
 
-module.exports = ContributeView;
+module.exports = TheTeamView;

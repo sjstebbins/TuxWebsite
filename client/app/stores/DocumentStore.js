@@ -17,8 +17,6 @@ var DocumentStore = objectAssign({} , EventEmitter.prototype, {
   },
 
   getSingleDoc: function (section, doc) {
-    console.log(section);
-    console.log(this._docs)
     if (doc) {
       return this._docs[section][doc];
     }
