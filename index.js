@@ -8,7 +8,7 @@ app.use('/client', express.static(__dirname + '/client'));
 
 app.all('/*', function(req, res, next) {
     // Just send the index.html for other files to support HTML5Mode
-    res.sendfile('index.html', { root: __dirname });
+    res.sendFile('index.html', { root: __dirname });
 });
 
 app.listen(app.get('port'), function() {

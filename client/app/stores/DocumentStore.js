@@ -1,6 +1,6 @@
 'use strict';
 
-var request = require('request');
+var $ = require('jquery');
 var EventEmitter = require("events").EventEmitter;
 var DocumentConstants = require("../constants/DocumentConstants.js");
 var AppDispatcher = require("../dispatcher/AppDispatcher.js");
@@ -27,13 +27,14 @@ var DocumentStore = objectAssign({} , EventEmitter.prototype, {
 
   getAll: function () {
     //Request all doc section names
-    request({url: 'https://api.github.com/repos/TuxedoJS/TuxedoJS/contents/docs/ApiMenu.json', json: true, withCredentials: false}, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        //Set docs to reponse data
-        this._sections = JSON.parse(atob(response.body['content']))['data'];
+    $.ajax({
+      url: 'https://api.github.com/repos/TuxedoJS/TuxedoJS/contents/docs/ApiMenu.json',
+      withCredentials: false,
+      success: function (body) {
+        this._sections = JSON.parse(window.atob(body.content)).data;
         this.emitChange();
-      }
-    }.bind(this));
+      }.bind(this)
+    });
   },
 
   getDoc: function (section, doc) {
@@ -43,18 +44,20 @@ var DocumentStore = objectAssign({} , EventEmitter.prototype, {
     else {
       doc = '';
     }
-    this.doc = request({url: 'https://api.github.com/repos/TuxedoJS/TuxedoJS/contents/docs/' + section + doc +'.md', json: true, withCredentials: false}, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
+    $.ajax({
+      url: 'https://api.github.com/repos/TuxedoJS/TuxedoJS/contents/docs/' + section + doc +'.md',
+      withCredentials: false,
+      success: function (body) {
         //Return content of the selected doc
         if (doc) {
-          this._docs[section][doc] = atob(response.body['content']);
+          this._docs[section][doc] = window.atob(body.content);
         }
         else {
-          this._docs[section] = atob(response.body['content']);
+          this._docs[section] = window.atob(body.content);
         }
         this.emitChange();
-      }
-    }.bind(this));
+      }.bind(this)
+    });
   },
 
   emitChange: function () {
