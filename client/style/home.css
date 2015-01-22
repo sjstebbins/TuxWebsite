@@ -1,0 +1,141 @@
+.github{
+  margin-left: -2em;
+  background: white;
+  z-index:100;
+  position: relative;
+}
+.download{
+  margin-left: 5em;
+  background: white;
+  position: relative;
+  z-index: 100;
+}
+.github:hover{
+  color: #465CA9;
+}
+.download:hover{
+  color: #465CA9;
+}
+.tagline{
+  display: none;
+}
+.npm{
+  font-size: 40px;
+}
+.section1{
+  margin-top: -8em;
+  height: 600px;
+  width: 100vw;
+  background-image: url('../assets/witewall_3.png');
+}
+.tuxbg{
+  position: absolute;
+  margin-top: -8em;
+  height: 600px;
+  width: 100vw;
+  padding: none;
+  overflow-x: hidden;
+  opacity: .1;
+  background-image: url('../assets/tuxedos.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.intro{
+  text-align: center;
+}
+.grid{
+  width: 100vw;
+}
+.item-container{
+  width: 100vw;
+}
+.bowtie{
+  margin-left: -3em;
+}
+.dots{
+  width: 50px;
+  margin-left: -3em;
+}
+.tuxedo{
+  margin: 0 auto;
+  margin-top: 10em;
+  margin-left: -2em;
+  position: relative;
+  z-index: 100;
+}
+.section2{
+  color: rgba(255,255,255,.8);
+  padding: 2em;
+  height: 100vw;
+  width: 100vw;
+  text-align: center;
+  z-index: 100;
+  background-image: url('../assets/footer_lodyas.png');
+}
+.section2bg{
+  position: absolute;
+  height: 1000px;
+  margin-left: -6em;
+  width: 100vw;
+  padding: none;
+  overflow-x: hidden;
+  opacity: .05;
+  background-image: url('../assets/section2.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.section2 h1{
+  color: white
+}
+.section2 h3{
+  color: rgba(255,255,255,.8);
+}
+.section2 h4{
+  color: rgba(255,255,255,.8);
+}
+.section3{
+  width: 100vw;
+  min-height: 100vw;
+  background-image: url('../assets/gplaypattern.png');
+}
+.feature{
+  padding: 3em;
+}
+.readMeArrow{
+  text-align: center;
+  color: #465CA9;
+  font-size: 80px
+}
+.single-page{
+  border-radius: 5px;
+  margin-bottom: 6em;
+  margin-top: 10em;
+  margin-left: 6em;
+  background-color: rgba(255,255,255,.8);
+  padding-left: 3em;
+  padding-bottom: 3em;
+}
+.single-page img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.gettingStartedBg{
+  width: 100vw;
+  min-height: 100vw;
+  background-image: url('../assets/witewall_3.png');
+}
+.overviewBg{
+  width: 100vw;
+  min-height: 100vw;
+  background-image: url('../assets/witewall_3.png');
+}
+.readMe{
+  border-radius: 5px;
+  margin-bottom: 6em;
+  margin-top: 3em;
+  margin-left: 6em;
+  background-color: rgba(255,255,255,.8);
+  padding-left: 3em;
+  padding-bottom: 3em;
+}
+

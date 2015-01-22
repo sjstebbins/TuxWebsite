@@ -1,0 +1,57 @@
+.docs{
+  border-radius: 5px;
+  margin-bottom: 6em;
+  margin-top: 2em;
+  background-color: rgba(255,255,255,.8);
+  padding-left: 3em;
+  padding-bottom: 3em;
+}
+.defaultDoc{
+  min-height: 5em;
+}
+.docs-menu{
+  position: fixed;
+  margin-left: 2em;
+  margin-right: 4em;
+  padding: 1em;
+  border-radius: 5px;
+  height: 500px;
+  z-index: 100;
+}
+.menu-icon{
+  font-size: 20px
+}
+.menu{
+  z-index: 101;
+  position: fixed;
+  margin-top: 4em;
+  margin-left: 2em;
+  background-color: white;
+}
+.scroller{
+  font-size: 28px;
+  right: 100px;
+  position: fixed;
+  bottom: 50px;
+  visibility: hidden;
+  text-decoration: none;
+}
+.scroller:hover{
+  color: #465CA9;
+}
+.spinner1{
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 6em;
+  margin-left: 6em;
+}
+.spinner2{
+  height: 80px;
+  margin-left: 8em;
+  margin-top: 5em;
+}
+.docBg{
+  width: 100vw;
+  min-height: 100vw;
+  background-image: url('../assets/witewall_3.png');
+}

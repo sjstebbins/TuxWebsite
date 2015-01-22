@@ -1,0 +1,44 @@
+.the-team{
+  background-image: url('../assets/gplaypattern.png');
+  overflow-x:hidden;
+  width: 100vw;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: -3em;
+}
+.team{
+  margin-left: 2em;
+  margin-top:1em;
+  margin-bottom: 1em;
+}
+.team-profiles{
+/*  border-radius: 75px;*/
+  margin-top: -2em;
+  margin-left:3em;
+  height: 12em;
+  border-radius: 5px;
+}
+.profile{
+  padding: 2em
+}
+.team-names{
+  text-align: center;
+  text-decoration: none
+}
+.spinner3{
+  height: 80px;
+  margin-left: 10em
+}
+.contributeRow{
+  height: 150px;
+  width: 100vw;
+  background-image: url('../assets/footer_lodyas.png');
+}
+.contributeRow h3{
+  margin-left: 1em;
+  color: white;
+}
+.contributeRow h4{
+  margin-left: 1.5em;
+  color: rgba(255,255,255,.8);
+}
