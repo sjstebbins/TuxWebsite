@@ -30,8 +30,9 @@ var DocumentStore = objectAssign({} , EventEmitter.prototype, {
       url: 'https://api.github.com/repos/TuxedoJS/TuxedoJS/contents/docs/ApiMenu.json?client_id=' + process.env.GITHUB_CLIENT_ID + 'client_secret=' + process.env.GITHUB_SECRET_ID,
       withCredentials: false,
       success: function (body) {
-        this._sections = JSON.parse(window.atob(body.content)).data;
-         this.emitChange();
+        var input = body.content.replace(/\s/g, '');
+        this._sections = JSON.parse(window.atob(input)).data;
+        this.emitChange();
       }.bind(this)
     });
    },
@@ -48,8 +49,9 @@ var DocumentStore = objectAssign({} , EventEmitter.prototype, {
         url: 'https://api.github.com/repos/TuxedoJS/TuxedoJS/contents/' + section +'.md?client_id=' + process.env.GITHUB_CLIENT_ID + 'client_secret=' + process.env.GITHUB_SECRET_ID,
         withCredentials: false,
         success: function (body) {
-          //Return content of the selected doc
-          this._docs[section] = window.atob(body.content);
+          //Return content of the selected do
+          var input = body.content.replace(/\s/g, '');
+          this._docs[section] = window.atob(input);
           this.emitChange();
         }.bind(this)
       });
@@ -61,10 +63,12 @@ var DocumentStore = objectAssign({} , EventEmitter.prototype, {
         success: function (body) {
           //Return content of the selected doc
           if (doc) {
-            this._docs[section][doc] = window.atob(body.content);
+            var input = body.content.replace(/\s/g, '');
+            this._docs[section][doc] = window.atob(input);
           }
           else {
-            this._docs[section] = window.atob(body.content);
+            var input = body.content.replace(/\s/g, '');
+            this._docs[section] = window.atob(input);
           }
           this.emitChange();
         }.bind(this)
